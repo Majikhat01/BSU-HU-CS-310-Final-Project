@@ -43,8 +43,8 @@ CREATE TABLE IF NOT EXISTS instructors(
     first_name VARCHAR(80) NOT NULL,
     last_name VARCHAR(80) NOT NULL,
     academic_title_id INT,
-    PRIMARY KEY(instructor_id)
-    FOREIGN KEY(academic_title_id) REFERENCES academic_titles(academic_title_id),
+    PRIMARY KEY(instructor_id),
+    FOREIGN KEY(academic_title_id) REFERENCES academic_titles(academic_title_id)
 );
 
 CREATE TABLE IF NOT EXISTS terms(
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS class_sections(
     class_section_id INT NOT NULL AUTO_INCREMENT,
     class_id INT NOT NULL,
     instructor_id INT NOT NULL,
-    term_id NOT NULL,
+    term_id INT NOT NULL,
     PRIMARY KEY(class_section_id),
     FOREIGN KEY(class_id) REFERENCES classes(class_id),
     FOREIGN KEY(instructor_id) REFERENCES instructors(instructor_id),
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS class_registrations(
     class_section_id INT NOT NULL,
     student_id INT NOT NULL,
     grade_id INT,
-    signup_timestamp datetime DEFAULT CURRENT_TIMESTAMP
+    signup_timestamp datetime DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY(class_registration_id),
     FOREIGN KEY(class_section_id) REFERENCES class_sections(class_section_id),
     FOREIGN KEY(student_id) REFERENCES students(student_id),
