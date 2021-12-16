@@ -82,6 +82,9 @@ CREATE TABLE IF NOT EXISTS class_registrations(
     FOREIGN KEY(grade_id) REFERENCES grades(grade_id)
 );
 
+ALTER TABLE class_registrations
+ADD CONSTRAINT sect_uc unique(student_id, class_section_id);
+
 DELIMITER $$ 
 CREATE FUNCTION convert_to_grade_point(letter_grade char(2)) 
 	RETURNS INT 
