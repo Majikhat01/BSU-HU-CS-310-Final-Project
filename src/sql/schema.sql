@@ -49,7 +49,8 @@ CREATE TABLE IF NOT EXISTS instructors(
 
 CREATE TABLE IF NOT EXISTS terms(
     term_id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(80) NOT NULL
+    name VARCHAR(80) NOT NULL,
+    PRIMARY KEY(term_id)
 );
 
 CREATE TABLE IF NOT EXISTS class_sections(
