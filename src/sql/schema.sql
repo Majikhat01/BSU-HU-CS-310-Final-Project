@@ -12,7 +12,7 @@ DROP TABLE IF EXISTS class_sections;
 DROP TABLE IF EXISTS instructors; 
 DROP TABLE IF EXISTS academic_titles; 
 DROP TABLE IF EXISTS students; 
-DROP TABLE IF EXISTS classes 
+DROP TABLE IF EXISTS classes;
 DROP FUNCTION IF EXISTS convert_to_grade_point; 
  
 CREATE TABLE IF NOT EXISTS classes( 
